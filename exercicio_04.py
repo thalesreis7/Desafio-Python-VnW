@@ -1,13 +1,13 @@
-frutas = ["banana", "maçã", "banana", "laranja", "maçã", "maçã"] #lista
+string = "banana maçã banana laranja maçã maçã"
 
-def contar_palavras(frutas):# função que recebe uma string e conta quantas vezes cada palavra aparece nela
-    contagem = {} # dicionário vazio para armazenar a contagem das palavras
-    palavras = frutas # lista de palavras
-    for palavra in palavras: # para cada palavra na lista de palavras executa o bloco de código abaixo
-        if palavra in contagem: # se a palavra já está no dicionário adiciona 1 ao valor da palavra
-            contagem[palavra] += 1
-        else: # se a palavra não está no dicionário adiciona a palavra no dicionário com valor 1
-            contagem[palavra] = 1 
-    return contagem # retorna o dicionário com a contagem das palavras
+def contagem(string): 
+    dicionario = {} # dicionário vazio para armazenar a contagem das palavras
+    lista = string.split(', ') # separa a string em uma lista de palavras
+    for item in lista:
+        if not item in dicionario.keys(): # se o item não está no dicionário, adiciona o item no dicionário e a quantidade de vezes que aparece na lista
+            dicionario[item] = lista.count(item)
+    return dicionario
 
-print(contar_palavras(frutas)) # imprime o dicionário com a contagem das palavras
+print(contagem(string))
+        
+            
